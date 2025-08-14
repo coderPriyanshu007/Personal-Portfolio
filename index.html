@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Portfolio Layout</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-gray-100 p-10 flex justify-center items-center min-h-screen">
+    <div
+      class="bg-[#fff] relative shadow-2xl rounded-3xl p-[50px] lg:h-[630px] xl:w-[1200px] max-w-[1200px] overflow-hidden flex flex-col lg:flex-row gap-8"
+    >
+      <!-- About Me Section -->
+      <div
+        id="about-me"
+        class="overflow-hidden opacity-0  flex gap-6 lg:max-w-[384px] h-full"
+      >
+        <div class="max-w-[384px] relative">
+          <img src="./assets/images/profile.png" class="h-full w-full" alt="" />
+          <div id="intro" class="intro drop-shadow-lg font-black">
+            <p
+              data-aos="fade-right"
+              data-aos-delay="400"
+              style="font-family: 'Red Hat Display', sans-serif"
+            >
+              I'm,
+            </p>
+            <p
+              data-aos="fade-right"
+              data-aos-delay="600"
+              class="text-gray-200"
+              style="font-family: 'Black Han Sans', sans-serif"
+            >
+              Priyanshu
+            </p>
+            <p
+              data-aos="fade-right"
+              data-aos-delay="800"
+              class="text-gray-200"
+              style="font-family: 'Black Han Sans', sans-serif"
+            >
+              Gusain
+            </p>
+          </div>
+
+          <p
+            data
+            id="btn-open-about"
+            class="about cursor-pointer text-xl"
+            data-aos="slide-up"
+          >
+            <i
+              onclick="openAboutMe()"
+              class="fa-solid transition-transform fa-arrow-right-long p-2 border-2 rounded-[50%] hover:scale-110 hover:bg-white   hover:text-indigo-300 hover:shadow-none shadow-gray-800 shadow-sm"
+            ></i>
+          </p>
+        </div>
+
+        <!-- socials -->
+        <div
+          class="flex flex-col  gap-4 text-md font-light hidden md:flex lg:hidden text-gray-500"
+        >
+          <a href="mailto:kandaripriyanshu1@gmail.com" aria-label="Email">
+            <div
+              class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+            >
+              <span class="w-[30px] h-[30px]"
+                ><img src="assets/images/gmail.png" alt=""
+              /></span>
+              kandaripriyanshu1@gmail.com
+            </div>
+          </a>
+
+          <div
+            class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+          >
+            <span class="w-[30px] h-[30px]"
+              ><img src="assets/images/phone.png" alt=""
+            /></span>
+            +91-7078006884
+          </div>
+
+          <a href="https://instagram.com/perukandari">
+            <div
+              class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+            >
+              <span class="w-[30px] h-[30px]"
+                ><img src="assets/images/insta.png" alt=""
+              /></span>
+              @PERUKANDARI
+            </div>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/priyanshu-gusain"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <div
+              class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+            >
+              <span class="w-[30px] h-[30px]"
+                ><img src="assets/images/linkedin.png" alt=""
+              /></span>
+              /priyanshu-gusain
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/coderPriyanshu007"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <div
+              class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+            >
+              <span class="w-[30px] h-[30px]"
+                ><img src="assets/images/github.png" alt=""
+              /></span>
+              /coderPriyanshu007
+            </div>
+          </a>
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            aria-label="WhatsApp"
+          >
+            <div
+              class="flex items-center p-3 transition-all hover:scale-[1.02] bg-gray-100 hover:drop-shadow-lg gap-3"
+            >
+              <span class="w-[30px] h-[30px]"
+                ><img src="assets/images/wsapp.png" alt=""
+              /></span>
+              +91-7078006884
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Portfolio & Projects Section -->
+      <div class="flex-1" id="portfolio">
+        <h1
+          id="portfolio-heading"
+          class="sm:text-6xl md:text-7xl font-semibold xl:text-8xl text-center lg:text-start font-bold text-gray-800 portfolio drop-shadow-lg flex justify-between items-end"
+          data-aos="fade-down"
+          style="font-family: 'Audiowide', sans-serif"
+        >
+          Portfolio
+          <i
+            id="btn-open-portfolio"
+            onclick="showAllProjects()"
+            class="fa-solid fa-arrow-right-long text-2xl py-2 px-[12px] border-2 border-black mb-2 rounded-[50%] transition-transform shadow-md shadow-purple-500/50 hover:scale-110 hover:bg-black hover:text-white cursor-pointer"
+          ></i>
+        </h1>
+
+        <!-- Projects Grid -->
+        <div
+          id="portfolio-content"
+          class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 mt-4"
+        >
+          <div
+            id="tindog"
+            data-aos="zoom-in-up"
+            onclick="showDetails('tindog')"
+            class="relative cursor-pointer portfolio-items h-48 overflow-hidden shadow-xl cursor-pointer text-white font-bold text-xl"
+          >
+            <img
+              src="./assets/images/tindog.png"
+              alt="Tindog Startup"
+              class="object-cover rounded-md w-80 mx-auto h-full"
+            />
+            <div
+              class="project-title py-1 flex justify-center items-center bg-black/50 backdrop-blur-sm drop-shadow-lg w-full absolute justify-center flex items-center"
+              style="bottom: 0"
+            >
+              Tindog
+            </div>
+          </div>
+          <div
+            id="reactjobs"
+            data-aos="zoom-in-up"
+            onclick="showDetails('reactjobs')"
+            class="relative portfolio-items h-48 overflow-hidden shadow-xl cursor-pointer text-white font-bold text-xl"
+          >
+            <img
+              src="./assets/images/react-jobs.png"
+              alt="React Jobs"
+              class="object-cover mx-auto rounded-md w-80 h-full"
+            />
+            <div
+              class="project-title py-1 bg-black/50 backdrop-blur-sm drop-shadow-lg w-full absolute justify-center flex items-center"
+              style="bottom: 0"
+            >
+              React <span class="text-indigo-400">Jobs</span>
+            </div>
+          </div>
+
+          <div
+            id="anirecs"
+            data-aos="zoom-in-up"
+            onclick="showDetails('anirecs')"
+            class="relative portfolio-items h-48 overflow-hidden shadow-xl cursor-pointer text-white font-bold text-xl"
+          >
+            <img
+              src="./assets/images/samurai.png"
+              alt="ani recs"
+              class="object-cover mx-auto rounded-md w-80 h-full"
+            />
+            <div
+              class="project-title py-1 bg-black/50 backdrop-blur-sm drop-shadow-lg w-full absolute justify-center flex items-center"
+              style="bottom: 0"
+            >
+              Ani <span class="text-red-500">Recs</span>
+            </div>
+          </div>
+          <div
+            id="ischool"
+            data-aos="zoom-in-up"
+            onclick="showDetails('ischool')"
+            class="relative portfolio-items h-48 overflow-hidden shadow-xl cursor-pointer text-white font-bold text-xl"
+          >
+            <img
+              src="./assets/images/ischool.png"
+              alt="ischool"
+              class="object-cover mx-auto rounded-md w-80 h-full"
+            />
+            <div
+              class="project-title py-1 bg-black/50 backdrop-blur-sm drop-shadow-lg w-full absolute justify-center flex items-center"
+              style="bottom: 0"
+            >
+              <span class="text-cyan-700 font-extrabold">i</span> School
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="about" class="w-full h-full hidden">
+        <!-- Navigation Tabs -->
+        <div
+          class="flex justify-between items-center border-b border-gray-600 pb-4 mb-6"
+        >
+          <div id="navigation-tabs" class="flex gap-4">
+            <button
+              class="go-to-home bg-gray-200 px-4 py-2 rounded-lg drop-shadow-lg hover:text-white hover:bg-purple-500"
+            >
+              <i class="fa-solid fa-house"></i>
+            </button>
+            <button
+              class="tab-btn hidden lg:block bg-gray-100 active-tab drop-shadow-lg"
+              onclick="showTab('summary')"
+            >
+              Summary
+            </button>
+            <button
+              class="tab-btn  hidden lg:block bg-gray-100 drop-shadow-lg"
+              onclick="showTab('education')"
+            >
+              Education
+            </button>
+            <button
+              class="tab-btn  hidden lg:block bg-gray-100 drop-shadow-lg"
+              onclick="showTab('skills')"
+            >
+              Skills
+            </button>
+            <button
+              class="tab-btn  hidden lg:block bg-gray-100 drop-shadow-lg"
+              onclick="showTab('contact')"
+            >
+              Contact Me
+            </button>
+          </div>
+          <a
+            href="assets/pdf/resume.pdf"
+            download
+            class="bg-gradient-to-r from-indigo-500 to-purple-500 ms-auto px-4 py-2 rounded-lg hover:animate-pulse text-white"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+        </div>
+
+        <!-- Tabs Content -->
+        <div id="tab-content" class="space-y-10">
+          <!-- Summary Tab -->
+          <div id="summary" class="tab-content">
+            <h2 class="text-3xl font-bold text-lavender">
+              <span class="text-[#c084fc]">Priyanshu Gusain</span>
+            </h2>
+            <p>Full Stack Web Developer</p>
+            <div class="grid mt-4 grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="col-span-2">
+                <p
+                  class="font-[Outfit] font-light text-justify text-gray-900 mb-4 text-[18px]"
+                >
+                  Hi, I'm Priyanshu Gusain from Dehradun, Uttarakhand, India — a
+                  curious soul who has always been fascinated by the world of
+                  computers and technology. My passion for coding began early,
+                  and it naturally led me into the exciting world of web
+                  development.
+
+                  <br />Since discovering web development, I've been building
+                  intuitive, responsive, and visually appealing websites. From
+                  crafting sleek UI designs to developing robust full-stack
+                  applications, I love bringing digital ideas to life with clean
+                  code and creative solutions.
+
+                  <br />I strive to blend aesthetic design with seamless
+                  functionality, aiming to create web experiences that not only
+                  look great but also perform flawlessly.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 class="font-bold text-lg text-purple-400">Hobbies</h3>
+                    <ul class="list-disc list-inside text-gray-900">
+                      <li>Gaming 🎮</li>
+                      <li>Sketching ✏️</li>
+                      <li>Coding Challenges 👨‍💻</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg text-purple-400">Favorites</h3>
+                    <ul class="list-disc list-inside text-gray-900">
+                      <li>Sport: Football ⚽</li>
+                      <li>Food: Aalo ka Parantha , Pizza 🍕</li>
+                      <li>Anime: Attack On Titan / Vinland Saga 🎴</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="flex hidden lg:block items-start max-h-96 justify-center">
+                <img
+                  src="assets/images/About Me2.png"
+                  alt="Profile Graphic"
+                  class="rounded-lg w-full"
+                  style="box-shadow: 5px 30px 20px #79787a"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Tab -->
+          <div id="education" class="tab-content ">
+            <div class="overflow-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-gray-100 text-purple-500">
+                    <th class="p-3">Degree</th>
+                    <th class="p-3">Institution</th>
+                    <th class="p-3">Stream</th>
+                    <th class="p-3">Score</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                  <tr class="border-t border-gray-700">
+                    <td class="p-3 font-bold">10th</td>
+                    <td class="p-3">
+                      Shri Guru Ram Rai assets School (2016-17)
+                    </td>
+                    <td class="p-3">Science</td>
+                    <td class="p-3">10 cgpa</td>
+                  </tr>
+                  <tr class="border-t border-gray-700">
+                    <td class="p-3 font-bold">12th</td>
+                    <td class="p-3">
+                      Shri Guru Ram Rai assets School (2018-19)
+                    </td>
+                    <td class="p-3">PCM</td>
+                    <td class="p-3">90.2%</td>
+                  </tr>
+                  <tr class="border-t border-gray-700">
+                    <td class="p-3 font-bold">Graduation</td>
+                    <td class="p-3">DAV PG college (2019-22)</td>
+                    <td class="p-3">B.Sc. PCM</td>
+                    <td class="p-3">6.5 CGPA</td>
+                  </tr>
+                  <tr class="border-t border-gray-700">
+                    <td class="p-3 font-bold">Postgraduation</td>
+                    <td class="p-3">ITM Dehradun (2022-24)</td>
+                    <td class="p-3">M.Sc. IT</td>
+                    <td class="p-3">7.4 CGPA</td>
+                  </tr>
+                  <tr class="border-t border-gray-700">
+                    <td class="p-3 font-bold">Certificaton</td>
+                    <td class="p-3">Udemy (2025)</td>
+                    <td class="p-3">Full Stack Web Development</td>
+                    <td class="p-3">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Skills Tab -->
+          <div id="skills" class="tab-content ">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">HTML5</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">CSS3</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">JavaScript</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">React</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                  width="40"
+                />
+                <span class="mt-2">Node</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg"
+                  width="40"
+                />
+                <span class="mt-2">express</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">postgreSQL</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">Bootstrap</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">TailwindCSS</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">php</span>
+              </div>
+              <div
+                class="bg-gray-100 p-4 rounded-xl flex items-center justify-center flex-col"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg"
+                  width="40"
+                />
+                <span class="mt-2">jQuery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Tab -->
+          <div id="contact" class="tab-content ">
+            <h2 class="text-2xl font-bold text-purple-400 mb-4">
+              Get in Touch
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+              <!-- Contact Form -->
+              <form
+                id="contactForm"
+                class="grid gap-4 col-span-2 bg-gray-100 p-6 border-purple-400 border rounded-xl"
+              >
+                <p id="warning" class="hidden"></p>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  class="p-3 rounded bg-white text-black border border-purple-400"
+                  name="name"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="p-3 rounded bg-white text-black border border-purple-400"
+                  name="email"
+                />
+                <textarea
+                  placeholder="Message"
+                  rows="4"
+                  class="p-3 resize-none rounded bg-white text-black border border-purple-400"
+                  name="message"
+                ></textarea>
+                <button
+                  id="sendMessage"
+                  type="submit"
+                  class="bg-gradient-to-r from-purple-400 via-indigo-500 to-purple-700 text-white px-4 py-2 rounded-md hover:scale-105 transition transform duration-200"
+                >
+                  Send Message
+                </button>
+              </form>
+              <!-- Socials -->
+              <div
+                class="flex flex-col justify-center gap-2 text-md font-light text-gray-500"
+              >
+                <a href="mailto:kandaripriyanshu1@gmail.com" aria-label="Email">
+                  <div
+                    class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                  >
+                    <span class="w-[20px] h-[20px]"
+                      ><img src="assets/images/gmail.png" alt=""
+                    /></span>
+                    kandaripriyanshu1@gmail.com
+                  </div>
+                </a>
+
+                <div
+                  class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                >
+                  <span class="w-[20px] h-[20px]"
+                    ><img src="assets/images/phone.png" alt=""
+                  /></span>
+                  +91-7078006884
+                </div>
+
+                <a href="https://instagram.com/perukandari">
+                  <div
+                    class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                  >
+                    <span class="w-[20px] h-[20px]"
+                      ><img src="assets/images/insta.png" alt=""
+                    /></span>
+                    @PERUKANDARI
+                  </div>
+                </a>
+
+                <a
+                  href="https://linkedin.com/in/priyanshu-gusain"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <div
+                    class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                  >
+                    <span class="w-[20px] h-[20px]"
+                      ><img src="assets/images/linkedin.png" alt=""
+                    /></span>
+                    /priyanshu-gusain
+                  </div>
+                </a>
+
+                <a
+                  href="https://github.com/coderPriyanshu007"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <div
+                    class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                  >
+                    <span class="w-[20px] h-[20px]"
+                      ><img src="assets/images/github.png" alt=""
+                    /></span>
+                    /coderPriyanshu007
+                  </div>
+                </a>
+                <a
+                  href="https://wa.me/919876543210"
+                  target="_blank"
+                  aria-label="WhatsApp"
+                >
+                  <div
+                    class="flex items-center p-3 transition-all hover:scale-[1.02] hover:bg-gray-100 hover:drop-shadow-lg gap-3"
+                  >
+                    <span class="w-[20px] h-[20px]"
+                      ><img src="assets/images/wsapp.png" alt=""
+                    /></span>
+                    +91-7078006884
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- specific project section -->
+      <section id="project-details" class="w-full hidden">
+        <div
+          id="project-details-nav"
+          class="flex gap-4 border-b border-gray-400 pb-4"
+        >
+          <button
+            class="go-to-home bg-gray-200 px-4 py-2 rounded-lg drop-shadow-lg hover:text-white hover:bg-purple-500"
+          >
+            <i class="fa-solid fa-house"></i>
+          </button>
+          <button
+            id="all-projects"
+            onclick="showAllProjects()"
+            class="bg-gray-200 px-4 font-bold py-2 rounded-lg drop-shadow-lg hover:text-white hover:bg-purple-500"
+          >
+            Projects
+          </button>
+          <a
+            href="assets/pdf/resume.pdf"
+            download
+            class="bg-gradient-to-r from-indigo-500 to-purple-500 ms-auto px-4 py-2 rounded-lg hover:animate-pulse text-white"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+        </div>
+        <div id="project-content" class="flex flex-col lg:flex-row h-full w-full gap-4 flex-row">
+          <div class="lg:w-1/2">
+            <h1
+              id="project-heading"
+              class="text-[3rem] font-bold text-[#c084fc] mt-6 mb-2"
+              style="font-family: 'Red Hat Display', sans-serif"
+            ></h1>
+            <p id="project-desc" class="text-justify text-md mb-4"></p>
+            <div id="links" class="mb-6 flex gap-4">
+              <a id="github" target="_blank" href="" class="hover:text-indigo-400"
+                ><span class="flex"
+                  ><img
+                    src="assets/images/github.png"
+                    class="me-2"
+                    height="20px"
+                    width="25px"
+                    alt=""
+                  />Github</span
+                >
+              </a>
+              <!-- <a href="" class="hover:text-indigo-400"
+                ><span class="flex"
+                  ><img src="assets/images/web.png" class="me-2" height=20px"
+                  width="25px" alt="" />Live</span
+                >
+              </a> -->
+            </div>
+            <h2
+              class="text-[#c084fc] font-bold text-2xl mb-4"
+              style="font-family: 'Red Hat Display', sans-serif"
+            >
+              Tech Stack
+            </h2>
+            <div id="tech-stack" class="flex gap-4"></div>
+          </div>
+          <div class="lg:w-1/2 flex items-center">
+            <div
+              class="h-[300px] shadow-lg max-w-3xl flex items-center rounded-lg overflow-hidden relative"
+            >
+              <!-- Slides wrapper -->
+              <div
+                id="carouselSlides"
+                class="flex h-full transition-transform duration-700"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- all projects section -->
+
+      <section id="allProjects" class="w-full hidden">
+        <div
+          id="projects-nav"
+          class="flex gap-4 border-b border-gray-400 pb-4 mb-4"
+        >
+          <button
+            class="go-to-home bg-gray-200 px-4 py-2 rounded-lg drop-shadow-lg hover:text-white hover:bg-purple-500"
+          >
+            <i class="fa-solid fa-house"></i>
+          </button>
+          <a
+            href="assets/pdf/resume.pdf"
+            download
+            class="bg-gradient-to-r from-indigo-500 to-purple-500 ms-auto px-4 py-2 rounded-lg hover:animate-pulse text-white"
+          >
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+        </div>
+        <div
+          id="all-project-content"
+          class=""
+          style="font-family: 'Outfit', sans-serif"
+        >
+          <div id="project-slider-wrapper" class="">
+            <div
+              id="previousSlide"
+              class="absolute hidden flex justify-center items-center top-1/2 z-50 text-gray-200 text-[40px] -translate-y-[50px] h-[100px] w-[50px] cursor-pointer rounded-md hover:bg-gray-900/50 bg-gray-800/30 backdrop-blur-sm left-[20px]"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div
+              id="nextSlide"
+              class="absolute hidden flex justify-center items-center top-1/2 z-50 text-gray-200 text-[40px] h-[100px] -translate-y-[50px] w-[50px] cursor-pointer rounded-md hover:bg-gray-900/50 right-[20px] bg-gray-800/30 backdrop-blur-sm bg-gray-200 right-0"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div
+              id="project-slider"
+              class="flex transition-transform duration-500 ease-in-out"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <script src="index.js"></script>
+  </body>
+</html>
